@@ -16,7 +16,11 @@
   border-radius: 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-
+.css-1vmzosp-MuiPaper-root-MuiDrawer-paper{
+  background: #1a1a1a !important;
+  color: white !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+}
 .center-flex {
   display: flex;
   flex-direction: column;

@@ -41,22 +41,21 @@ export default function DataGridDemo(props) {
     {
       field: "number",
       headerName: "Number",
-      width: 120,
+      width: Util.twohud,
     },
     {
       field: "address",
       headerName: "Address",
-      width: 200
+      width: Util.twohud,
     },
     {
       field: "department",
       headerName: "Department",
-      width: 100
     },
     {
       field: "action",
       headerName: "Action",
-      width: 150,
+      
       renderCell: (param) => {
 
         return (
@@ -100,7 +99,7 @@ export default function DataGridDemo(props) {
     }
   };
   return (
-    <Box className='shadow' mt={3} sx={{ minWidth: 800,backgroundColor: (theme) => alpha(theme.palette.background.default, 0.8), }} >
+    <Box className='shadow' mt={3} sx={{width:'65% !important'}} >
       {props?.employeeData && props?.employeeData.length > 0 ? (
         <DataGrid
           rows={rowsWithIds}
@@ -115,6 +114,7 @@ export default function DataGridDemo(props) {
           pageSizeOptions={[10]}
           checkboxSelection
           disableRowSelectionOnClick
+          
         />
       ) : (
         <p>No data available.</p>

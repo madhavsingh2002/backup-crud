@@ -44,10 +44,11 @@ function Home() {
       <Box
         display="flex"
         flexDirection="column"
-        justifyContent={"center"}
+        justifyContent={"flex-start"}
         alignContent={"center"}
         alignItems="center"
         width="100%"
+        height='100vh'
       >
         <Stack direction="row" justifyContent="space-between" spacing={4} sx={{width:'50%'}}>
           <Stack spacing={1}>
