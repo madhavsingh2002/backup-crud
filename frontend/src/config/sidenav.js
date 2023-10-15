@@ -1,27 +1,29 @@
-import { Home } from "@mui/icons-material";
-import { SvgIcon } from "@mui/material";
 
+import LoginIcon from '@mui/icons-material/Login';
+import HomeIcon from '@mui/icons-material/Home';
+import PersonIcon from '@mui/icons-material/Person';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
 const ListNav = [
   {
     title: "Home",
-    path: "/dashboard",
-    icon:'home'
+    path: "/home",
+    icon:<HomeIcon/>
   },
   {
     title: "Employee",
     path: "/home",
-    icon:'person'
+    icon:<PersonIcon/>
   },
   {
     title: "Register",
     path: "/register",
-    icon:'person_add'
+    icon:<GroupAddIcon/>
     
   },
   {
     title: "Login",
     path: "/login",
-    icon:'login'
+    icon:<LoginIcon/>
   },
   
   

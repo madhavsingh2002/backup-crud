@@ -18,7 +18,13 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
+import HomeIcon from '@mui/icons-material/Home';
+import ListNav from '../config/sidenav';
+import { Link } from 'react-router-dom';
+import AccountPop from './Account';
+import NotificationIcon from '../Icons/Notification';
+import SearchIcon from '../Icons/Search';
+import ContactIcon from '../Icons/Contact';
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -82,7 +88,7 @@ export default function PersistentDrawerLeft() {
     <Box sx={{ display: 'flex' }} >
       <CssBaseline />
       <AppBar position="fixed" open={open} sx={{background:'white !important',boxShadow:'none !important'}}>
-        <Toolbar>
+        <Toolbar  >
           <IconButton
             color="white"
             aria-label="open drawer"
@@ -95,8 +101,16 @@ export default function PersistentDrawerLeft() {
           <Typography variant="h6" noWrap component="div" sx={{color:'black'}}>
             CRUD-App
           </Typography>
+          <Box display='flex'  sx={{marginLeft:'75%'}} justifyContent={'center'} alignItems={'center'}>
+          <NotificationIcon/>
+          <SearchIcon/>
+          <ContactIcon/>
+          <AccountPop/>
+          </Box>
         </Toolbar>
+        
       </AppBar>
+      
       <Drawer
         sx={{
           width: drawerWidth,
@@ -113,19 +127,18 @@ export default function PersistentDrawerLeft() {
         
       >
         <DrawerHeader >
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleDrawerClose} sx={{color:'white !important'}}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
-        </DrawerHeader>
-        
+        </DrawerHeader>  
         <List >
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {ListNav.map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <ListItemIcon sx={{color:'white !important'}}>
+                  {text.icon}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+               <Link to={text.path} >  <ListItemText sx={{color:'white !important',textDecoration:'none !important'}} primary={text.title} /></Link>
               </ListItemButton>
             </ListItem>
           ))}

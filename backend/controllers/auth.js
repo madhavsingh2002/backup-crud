@@ -1,8 +1,5 @@
 const UserModel = require("../model/user.js");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const JWT_SECRET = process.env.JWT_SECRET;
-const cookie = require('cookie');
 const Register = async (req, res) => {
   try {
     const { fullName, email, number, password } = req.body;
@@ -39,7 +36,7 @@ const Login = async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({
-        message: "Invalid email or password",
+        message: "all the field required",
       });
     }
     const user = await UserModel.findOne({ email });
@@ -53,12 +50,7 @@ const Login = async (req, res) => {
       return res.status(404).json({
         message: "invalid password",
       });
-    }
-    // Generate a jwt token.
-    // const token = jwt.sign({ _id: user.id }, JWT_SECRET, {
-    //   expiresIn: "7d",
-    // });
-    
+    } 
     res.status(200).json({
       success: true,
       message: "Login successfully",

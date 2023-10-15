@@ -1,6 +1,4 @@
 const EmployeeModel = require("../model/employee.js");
-
-
 // Getting the Employee.
 const GetEmployee = async(req,res)=>{
     try{
@@ -11,7 +9,6 @@ const GetEmployee = async(req,res)=>{
         res.status(505).json({error:err.message})
       }
 }
-
 // Add the Employee.
 const AddEmployee = async (req, res) => {
     try{
@@ -78,7 +75,4 @@ const UpdateEmployee = async (req, res) => {
         res.status(505).json({error:err.message})
       }
 }
-
-
-
 module.exports = { AddEmployee,GetEmployee,DeleteEmployee,UpdateEmployee};

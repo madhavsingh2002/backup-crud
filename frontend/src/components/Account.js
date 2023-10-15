@@ -40,7 +40,7 @@ function AccountPop() {
         <Box
           sx={{
             py: 1.5,
-            px: 5,
+            px: 3,
           }}
         >
           <Typography variant="overline">Account</Typography>

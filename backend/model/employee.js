@@ -20,10 +20,7 @@ const employeeSchema = new mongoose.Schema({
     department: {
         type: String,
         required: true
-    },
-    
-    
+    },  
 });
-
 const EmployeeModel = mongoose.model("EmployeeModel", employeeSchema);
 module.exports = EmployeeModel;

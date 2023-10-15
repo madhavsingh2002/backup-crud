@@ -15,7 +15,7 @@ import Util from "../Util";
 import axios from "axios";
 import { apis, baseUrl } from "../Api.js";
 import swal from "sweetalert";
-import FetchEmployee from "../APIs/FetchEmployee";
+
 
 function ModalForm(props) {
   const [fullName, setFullname] = useState("");
